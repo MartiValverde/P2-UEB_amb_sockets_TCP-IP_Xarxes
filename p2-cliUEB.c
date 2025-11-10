@@ -28,9 +28,26 @@
 
 int main(int argc,char *argv[])
 {
- /* Declaració de variables, p.e., int n;                                 */
+    int n;
+    char *ip_servidor;
+    int port_servidor;
+    char *TextRes;
 
- /* Expressions, estructures de control, crides a funcions, etc.          */
+    printf("IP del Servidor:\n");
+    scanf("%ms", &ip_servidor);
+    printf("Port TCP del Servidor:\n");
+    scanf("%d", &port_servidor);
+
+    n = UEBc_DemanaConnexio(ip_servidor, port_servidor, TextRes);
+    if (n != 0) {
+        printf("Error en demanar connexió: %s\n", TextRes);
+        free(ip_servidor);
+        return -1;
+    }
+
+    
+
+
 
 }
 
